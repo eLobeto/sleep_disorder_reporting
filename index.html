@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sleep Report Generator</title>
+    </head>
+<body style="background-color:lightgrey">
+
+    <h1>Sleep Report Generator</h1>
+    <form name="sleep-form">
+        
+        <h3>General Questions</h3>
+        Patient ID: <input type="text" name="pid"><br>
+        Date of Service: <input type="text" name="dos"><br>
+        Type of Sleep Test: 
+        <select>
+            <option value="1">Overnight Diagnostic Polysomnogram w/o Questionaire</option>
+            <option value="2">Overnight Diagnostic Polysomnogram w/ Questionaire</option>
+            <option value="3">Overnight CPAP Titration w/o questionaire</option>
+            <option value="4">Overnight CPAP Titration w/ questionaire</option>
+            <option value="5">Split-Night Study w/o questionaire</option>
+            <option value="6">Split-Night Study w/ questionaire</option>
+        </select><br>
+        Age: <input type="text" name="age"><br>
+        Gender:
+        <select>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select><br>
+        Body Weight: <input type="text" name="weight"><br>
+        Height: <input type="text" name="height"><br>
+        Neck Circumference (inches): <input type="text" name="neck"><br>
+        
+        <h3>Sleep Questions</h3>
+        Are you unable to sleep?
+        <select>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select><br>
+        Do you snore?
+        <select>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select><br>
+        Do you stop breathing?
+        <select>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select><br>
+        Do you wake up gasping for breath or choking?
+        <select>
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select><br>
+        
+        <h3>Medical History</h3>
+        Do you have any of the following medical conditions:<br>
+        <input type="checkbox" name="conditions" value="htn"> HTN<br>
+        <input type="checkbox" name="conditions" value="htn"> Stroke<br>
+        <input type="checkbox" name="conditions" value="htn"> Chest pain or angina<br>
+        <input type="checkbox" name="conditions" value="htn"> Heart failure<br>
+        <input type="checkbox" name="conditions" value="htn"> Diabetes<br>
+        <input type="checkbox" name="conditions" value="htn"> Dpression<br>
+        <input type="checkbox" name="conditions" value="htn"> Fibromyalgia<br>
+        <input type="checkbox" name="conditions" value="htn"> Thyroid Disease<br>
+        <input type="checkbox" name="conditions" value="htn"> PTSD<br>
+        <input type="checkbox" name="conditions" value="htn"> Nightmares<br>
+        <input type="checkbox" name="conditions" value="htn"> Taking chronic pain medication/opioids/narcotics<br>
+        Smoker:
+        <select>
+            <option value="0">No</option>
+            <option value="1">Yes, but quit</option>
+            <option value="2">Yes</option>
+        </select><br>
+        
+        <h3>AUDIT Questions</h3>
+        How many drinks per day?
+        <select>
+            <option value="0">0</option>
+            <option value="1">1-3 drinks</option>
+            <option value="2">3-6</option>
+            <option value="3">6+</option>
+        </select><br>
+        How many weeks of drinking per month?
+        <select>
+            <option value="0">None</option>
+            <option value="1">1-2 weeks per month</option>
+            <option value="2">3 weeks per month</option>
+            <option value="3">Every week</option>
+        </select><br>
+        How often do you consume 6+ drinks at a time?
+        <select>
+            <option value="0">None</option>
+            <option value="1">Once per month</option>
+            <option value="2">Weekly</option>
+            <option value="3">A few times per week</option>
+            <option value="4">Several times per week</option>
+        </select><br>
+        
+        <h3>PHQ Questions</h3>
+        Score:
+        <select>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+        </select>
+        
+        <h3>Epworth Score</h3>
+        Score:
+        <select>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+        </select>
+        
+        <h3>Misc Questions</h3>
+        How many hours do you spend in bed in a 24 hour day? <input type="text" name="inBed"><br>
+        How many hours of sleep do you get in a 24 hour day? <input type="text" name="sleepPerDay"><br>
+        Do you have chronic pain? If so rate on a scale from 1-10 (0 if no pain):
+        <select>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select><br>
+        How many nights does pain disrupt sleep?
+        <select>
+            <option value="0">never</option>
+            <option value="1">1-2 nights</option>
+            <option value="2">3-4 nights</option>
+            <option value="3">5-7 nights</option>
+        </select><br>
+        <input type="checkbox" name="rls" value="0"> Restless legs <br>
+        RLS Criteria:
+        <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select><br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

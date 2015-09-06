@@ -1,0 +1,6 @@
+---
+applications:
+- buildpack: https://github.com/cloudfoundry-community/staticfile-buildpack.git
+  host: sleep_disorder_reporting
+  name: sleep_disorder_reporting
+  memory: 64M
