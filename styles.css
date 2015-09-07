@@ -1,0 +1,19 @@
+body {
+    background-color: #eceaea;
+    font-family: helvetica;
+}
+label, span {
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 25%;
+    text-align: right;
+}
+input {
+    display: inline-block;
+    float: left;
+}
+select {
+  display: inline-block;
+  float: left;
+}
