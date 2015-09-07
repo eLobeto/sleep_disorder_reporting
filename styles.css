@@ -17,3 +17,10 @@ select {
   display: inline-block;
   float: left;
 }
+
+input[type=submit] {
+    display: inline-block;
+    float: left;
+    width: 100px;
+    height: 40px;
+}
