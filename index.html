@@ -2,16 +2,18 @@
 <html>
     <head>
         <title>Sleep Report Generator</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
-<body style="background-color:#eceaea; font-family:helvetica">
+<body>
 
     <h1>Sleep Report Generator</h1>
     <form name="sleep-form">
         
+        <div>
         <h3>General Questions</h3>
-        Patient ID: <input type="text" name="pid"><br>
-        Date of Service: <input type="text" name="dos"><br>
-        Type of Sleep Test: 
+        <label>Patient ID:</label><input type="text" name="pid"><br>
+        <label>Date of Service:</label><input type="text" name="dos"><br>
+        <label>Type of Sleep Test:</label> 
         <select>
             <option value="1">Overnight Diagnostic Polysomnogram w/o Questionaire</option>
             <option value="2">Overnight Diagnostic Polysomnogram w/ Questionaire</option>
@@ -20,74 +22,80 @@
             <option value="5">Split-Night Study w/o questionaire</option>
             <option value="6">Split-Night Study w/ questionaire</option>
         </select><br>
-        Age: <input type="text" name="age"><br>
-        Gender:
+        <label>Age:</label> <input type="text" name="age"><br>
+        <label>Gender:</label>
         <select>
             <option value="M">Male</option>
             <option value="F">Female</option>
         </select><br>
-        Body Weight: <input type="text" name="weight"><br>
-        Height: <input type="text" name="height"><br>
-        Neck Circumference (inches): <input type="text" name="neck"><br>
+        <label>Body Weight:</label> <input type="text" name="weight"><br>
+        <label>Height:</label> <input type="text" name="height"><br>
+        <label>Neck Circumference (inches):</label><input type="text" name="neck"><br><br>
+        </div>
         
-        <h3>Sleep Questions</h3>
-        Are you unable to sleep?
+        <div>
+        <br><h3>Sleep Questions</h3>
+        <label>Are you unable to sleep?</label>
         <select>
             <option value="y">Yes</option>
             <option value="n">No</option>
         </select><br>
-        Do you snore?
+        <label>Do you snore?</label>
         <select>
             <option value="y">Yes</option>
             <option value="n">No</option>
         </select><br>
-        Do you stop breathing?
+        <label>Do you stop breathing?</label>
         <select>
             <option value="y">Yes</option>
             <option value="n">No</option>
         </select><br>
-        Do you wake up gasping for breath or choking?
+        <label>Do you wake up gasping for breath or choking?</label>
         <select>
             <option value="y">Yes</option>
             <option value="n">No</option>
         </select><br>
+        </div>
         
-        <h3>Medical History</h3>
-        Do you have any of the following medical conditions:<br>
-        <input type="checkbox" name="conditions" value="htn"> HTN<br>
-        <input type="checkbox" name="conditions" value="htn"> Stroke<br>
-        <input type="checkbox" name="conditions" value="htn"> Chest pain or angina<br>
-        <input type="checkbox" name="conditions" value="htn"> Heart failure<br>
-        <input type="checkbox" name="conditions" value="htn"> Diabetes<br>
-        <input type="checkbox" name="conditions" value="htn"> Dpression<br>
-        <input type="checkbox" name="conditions" value="htn"> Fibromyalgia<br>
-        <input type="checkbox" name="conditions" value="htn"> Thyroid Disease<br>
-        <input type="checkbox" name="conditions" value="htn"> PTSD<br>
-        <input type="checkbox" name="conditions" value="htn"> Nightmares<br>
-        <input type="checkbox" name="conditions" value="htn"> Taking chronic pain medication/opioids/narcotics<br>
-        Smoker:
+        <div>
+        <br><h3>Medical History</h3>
+        <span>Do you have any of the following medical conditions:</span><br>
+            <label>HTN</label><input type="checkbox" name="conditions" value="htn"> <br>
+            <label>Stroke</label><input type="checkbox" name="conditions" value="stroke"> <br>
+            <label>Angina</label><input type="checkbox" name="conditions" value="angina"> <br>
+            <label>Heart failure</label><input type="checkbox" name="conditions" value="heartFailure"> <br>
+            <label>Diabetes</label><input type="checkbox" name="conditions" value="diabetes"> <br>
+            <label>Depression</label><input type="checkbox" name="conditions" value="depression"><br>
+            <label>Fibromyalgia</label><input type="checkbox" name="conditions" value="fibro"> <br>
+            <label>Thyroid Disease</label><input type="checkbox" name="conditions" value="thyroid"> <br>
+            <label>PTSD</label><input type="checkbox" name="conditions" value="ptsd"> <br>
+            <label>Nightmares</label><input type="checkbox" name="conditions" value="nightmares"> <br>
+            <label>Taking chronic pain medication/opioids/narcotics</label><input type="checkbox" name="conditions" value="painMed"><br>
+        <label>Smoker:</label>
         <select>
             <option value="0">No</option>
             <option value="1">Yes, but quit</option>
             <option value="2">Yes</option>
         </select><br>
+        </div>
         
-        <h3>AUDIT Questions</h3>
-        How many drinks per day?
+        <div>
+        <br><h3>AUDIT Questions</h3>
+        <label>How many drinks per day?</label>
         <select>
             <option value="0">0</option>
             <option value="1">1-3 drinks</option>
             <option value="2">3-6</option>
             <option value="3">6+</option>
         </select><br>
-        How many weeks of drinking per month?
+        <label>How many weeks of drinking per month?</label>
         <select>
             <option value="0">None</option>
             <option value="1">1-2 weeks per month</option>
             <option value="2">3 weeks per month</option>
             <option value="3">Every week</option>
         </select><br>
-        How often do you consume 6+ drinks at a time?
+        <label>How often do you consume 6+ drinks at a time?</label>
         <select>
             <option value="0">None</option>
             <option value="1">Once per month</option>
@@ -95,9 +103,11 @@
             <option value="3">A few times per week</option>
             <option value="4">Several times per week</option>
         </select><br>
+        </div>
         
-        <h3>PHQ Questions</h3>
-        Score:
+        <div>
+        <br><h3>PHQ Questions</h3>
+        <label>Score:</label>
         <select>
             <option value="0">0</option>
             <option value="1">1</option>
@@ -128,9 +138,11 @@
             <option value="26">26</option>
             <option value="27">27</option>
         </select>
+        </div>
         
-        <h3>Epworth Score</h3>
-        Score:
+        <div>
+        <br><h3>Epworth Score</h3>
+        <label>Score:</label>
         <select>
             <option value="0">0</option>
             <option value="1">1</option>
@@ -158,11 +170,13 @@
             <option value="23">23</option>
             <option value="24">24</option>
         </select>
+        </div>
         
-        <h3>Misc Questions</h3>
-        How many hours do you spend in bed in a 24 hour day? <input type="text" name="inBed"><br>
-        How many hours of sleep do you get in a 24 hour day? <input type="text" name="sleepPerDay"><br>
-        Do you have chronic pain? If so rate on a scale from 1-10 (0 if no pain):
+        <div>
+        <br><h3>Misc Questions</h3>
+            <label>How many hours do you spend in bed in a 24 hour day?</label> <input type="text" name="inBed"><br>
+            <label>How many hours of sleep do you get in a 24 hour day?</label> <input type="text" name="sleepPerDay"><br>
+        <label>Do you have chronic pain? If so rate on a scale from 1-10 (0 if no pain):</label>
         <select>
             <option value="0">0</option>
             <option value="1">1</option>
@@ -176,21 +190,22 @@
             <option value="9">9</option>
             <option value="10">10</option>
         </select><br>
-        How many nights does pain disrupt sleep?
+        <label>How many nights does pain disrupt sleep?</label><br>
         <select>
             <option value="0">never</option>
             <option value="1">1-2 nights</option>
             <option value="2">3-4 nights</option>
             <option value="3">5-7 nights</option>
         </select><br>
-        <input type="checkbox" name="rls" value="0"> Restless legs <br>
-        RLS Criteria:
+            <label>Restless legs</label><input type="checkbox" name="rls" value="0"> 
+        <label>RLS Criteria:</label>
         <select>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
         </select><br>
+        </div>
         <input type="submit" value="Submit">
     </form>
 
