@@ -1,128 +1,130 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sleep Report Generator</title>
+        <title>Sleep Report Clinical Data Assesment</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="./process.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>       
     </head>
 <body>
 
-    <h1>Sleep Report Generator</h1>
-    <form name="sleep-form">
+    <h1>Sleep Report Clinical Data Assesment</h1>
+    <form id="sleep-form">
         
         <div>
         <h3>General Questions</h3>
-        <label>Patient ID:</label><input type="text" name="pid"><br>
-        <label>Date of Service:</label><input type="text" name="dos"><br>
+        <label>Patient ID:</label><input type="text" id="pid"><br>
+        <label>Date of Service:</label><input type="text" id="dos"><br>
         <label>Type of Sleep Test:</label> 
-        <select>
-            <option value="1">Overnight Diagnostic Polysomnogram w/o Questionaire</option>
-            <option value="2">Unattended Overnight Diagnostic Polysomnogram w/o Questionaire</option>
-            <option value="3">Overnight Diagnostic Polysomnogram w/ Questionaire</option>
-            <option value="4">Unattended Overnight Diagnostic Polysomnogram w/ Questionaire</option>
-            <option value="5">Overnight CPAP Titration w/o questionaire</option>
-            <option value="6">Overnight CPAP Titration w/ questionaire</option>
-            <option value="7">Split-Night Study w/o questionaire</option>
-            <option value="8">Split-Night Study w/ questionaire</option>
-            <option value="9">Unattended Overnight Home Sleep Study</option>
+        <select id="studyType">
+            <option value="Overnight Diagnostic Polysomnogram w/o Questionaire">Overnight Diagnostic Polysomnogram w/o Questionaire</option>
+            <option value="Unattended Overnight Diagnostic Polysomnogram w/o Questionaire">Unattended Overnight Diagnostic Polysomnogram w/o Questionaire</option>
+            <option value="Overnight Diagnostic Polysomnogram w/ Questionaire">Overnight Diagnostic Polysomnogram w/ Questionaire</option>
+            <option value="Unattended Overnight Diagnostic Polysomnogram w/ Questionaire">Unattended Overnight Diagnostic Polysomnogram w/ Questionaire</option>
+            <option value="Overnight CPAP Titration w/o questionaire">Overnight CPAP Titration w/o questionaire</option>
+            <option value="Overnight CPAP Titration w/ questionaire">Overnight CPAP Titration w/ questionaire</option>
+            <option value="Split-Night Study w/o questionaire">Split-Night Study w/o questionaire</option>
+            <option value="Split-Night Study w/ questionaire">Split-Night Study w/ questionaire</option>
+            <option value="Unattended Overnight Home Sleep Study">Unattended Overnight Home Sleep Study</option>
         </select><br>
-        <label>Age:</label> <input type="text" name="age"><br>
+        <label>Age:</label> <input type="text" id="age"><br>
         <label>Gender:</label>
-        <select>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
+        <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
         </select><br>
-        <label>Body Weight:</label> <input type="text" name="weight"><br>
-        <label>Height:</label> <input type="text" name="height"><br>
-        <label>Neck Circumference (inches):</label><input type="text" name="neck"><br><br>
+        <label>Body Weight:</label> <input type="text" id="weight"><br>
+        <label>Height:</label> <input type="text" id="height"><br>
+        <label>Neck Circumference (inches):</label><input type="text" id="neck"><br><br>
         </div>
         
         <div>
         <br><h3>Sleep Questions</h3>
         <label>Are you unable to sleep?</label>
-        <select>
-            <option value="y">Yes</option>
-            <option value="n">No</option>
+        <select id="ableToSleep">
+            <option value="were not able to sleep">Yes</option>
+            <option value="were able to sleep">No</option>
         </select><br>
         <label>Do you snore?</label>
-        <select>
-            <option value="y">Yes</option>
-            <option value="n">No</option>
+        <select id="snore">
+            <option value="did snore">Yes</option>
+            <option value="did not snore">No</option>
         </select><br>
         <label>Do you stop breathing?</label>
-        <select>
-            <option value="y">Yes</option>
-            <option value="n">No</option>
+        <select id="breathing">
+            <option value="stopped breathing">Yes</option>
+            <option value="did not stop breathing">No</option>
         </select><br>
         <label>Do you wake up gasping for breath or choking?</label>
-        <select>
-            <option value="y">Yes</option>
-            <option value="n">No</option>
+        <select id="gasping">
+            <option value="did wake up gasping or choking">Yes</option>
+            <option value="did not wake up gasping or choking">No</option>
         </select><br><br>
         </div>
         
         <div>
         <br><h3>Medical History</h3>
         <span>Do you have any of the following medical conditions:</span><br>
-            <label>HTN</label><input type="checkbox" name="conditions" value="htn"> <br>
+            <label>HTN</label><input type="checkbox" name="conditions" value="HTN"> <br>
             <label>Stroke</label><input type="checkbox" name="conditions" value="stroke"> <br>
             <label>Angina</label><input type="checkbox" name="conditions" value="angina"> <br>
-            <label>Heart failure</label><input type="checkbox" name="conditions" value="heartFailure"> <br>
+            <label>Heart failure</label><input type="checkbox" name="conditions" value="heart failure"> <br>
             <label>Diabetes</label><input type="checkbox" name="conditions" value="diabetes"> <br>
             <label>Depression</label><input type="checkbox" name="conditions" value="depression"><br>
-            <label>Fibromyalgia</label><input type="checkbox" name="conditions" value="fibro"> <br>
-            <label>Thyroid Disease</label><input type="checkbox" name="conditions" value="thyroid"> <br>
-            <label>PTSD</label><input type="checkbox" name="conditions" value="ptsd"> <br>
+            <label>Fibromyalgia</label><input type="checkbox" name="conditions" value="fibromyalgia"> <br>
+            <label>Thyroid Disease</label><input type="checkbox" name="conditions" value="thyroid disease"> <br>
+            <label>PTSD</label><input type="checkbox" name="conditions" value="PTSD"> <br>
             <label>Nightmares</label><input type="checkbox" name="conditions" value="nightmares"> <br>
-            <label>Taking chronic pain medication/opioids/narcotics</label><input type="checkbox" name="conditions" value="painMed"><br>
-            <label>Chronic Lung Disease</label><input type="checkbox" name="conditions" value="lung"><br>
-            <label>Sinus Disorder</label><input type="checkbox" name="conditions" value="sinus"><br>
+            <label>Taking chronic pain medication/opioid/narcotics</label><input type="checkbox" name="conditions" value="taking chronic pain meds"><br>
+            <label>Chronic Lung Disease</label><input type="checkbox" name="conditions" value="chronic lung disease"><br>
+            <label>Sinus Disorder</label><input type="checkbox" name="conditions" value="sinus disorder"><br>
             <label>Reflux</label><input type="checkbox" name="conditions" value="reflux"><br>
-            <label>Neruomuscular Disease</label><input type="checkbox" name="conditions" value="nmd"><br>
+            <label>Neruomuscular Disease</label><input type="checkbox" name="conditions" value="neuromuscular disease"><br>
             <label>Arthritis</label><input type="checkbox" name="conditions" value="arthritis"><br>
-            <label>Liver Disease</label><input type="checkbox" name="conditions" value="liver"><br>
-            <label>Kidney Disease</label><input type="checkbox" name="conditions" value="kidney"><br>
-            <label>Parkinsonism</label><input type="checkbox" name="conditions" value="parkinsons"><br>
-            <label>Multiple Sclerosis</label><input type="checkbox" name="conditions" value="ms"><br>
-            <label>Seizure Disorder</label><input type="checkbox" name="conditions" value="seizure"><br>
+            <label>Liver Disease</label><input type="checkbox" name="conditions" value="liver disease"><br>
+            <label>Kidney Disease</label><input type="checkbox" name="conditions" value="kidney disease"><br>
+            <label>Parkinsonism</label><input type="checkbox" name="conditions" value="parkinsonism"><br>
+            <label>Multiple Sclerosis</label><input type="checkbox" name="conditions" value="multiple sclerosis"><br>
+            <label>Seizure Disorder</label><input type="checkbox" name="conditions" value="seizures"><br>
 
         <label>Smoker:</label>
-        <select>
-            <option value="0">No</option>
-            <option value="1">Yes, but quit</option>
-            <option value="2">Yes</option>
+        <select id="smoker">
+            <option value="not being a smoker">No</option>
+            <option value="being a smoker but quitting">Yes, but quit</option>
+            <option value="currently being a smoker">Yes</option>
         </select><br><br>
         </div>
         
         <div>
         <br><h3>AUDIT Questions</h3>
         <label>How many drinks per day?</label>
-        <select>
-            <option value="0">0</option>
-            <option value="1">1-3 drinks</option>
-            <option value="2">3-6</option>
-            <option value="3">6+</option>
+        <select id="drinksDay">
+            <option value="zero drinks per day">0</option>
+            <option value="one to three drinks per day">1-3 drinks</option>
+            <option value="three to six drinks per day">3-6</option>
+            <option value="six or more drinks per day">6+</option>
         </select><br>
         <label>How many weeks of drinking per month?</label>
-        <select>
-            <option value="0">None</option>
-            <option value="1">1-2 weeks per month</option>
-            <option value="2">3 weeks per month</option>
-            <option value="3">Every week</option>
+        <select id="drinksMonth">
+            <option value="zero weeks per month">None</option>
+            <option value="one to two weeks per month">1-2 weeks per month</option>
+            <option value="three weeks per month">3 weeks per month</option>
+            <option value="every week of the month">Every week</option>
         </select><br>
         <label>How often do you consume 6+ drinks at a time?</label>
-        <select>
-            <option value="0">None</option>
-            <option value="1">Once per month</option>
-            <option value="2">Weekly</option>
-            <option value="3">A few times per week</option>
-            <option value="4">Several times per week</option>
+        <select id="sixOrMore">
+            <option value="never">None</option>
+            <option value="once a month">Once per month</option>
+            <option value="on a weekly basis">Weekly</option>
+            <option value="a few times per week">A few times per week</option>
+            <option value="serveral times per week">Several times per week</option>
         </select><br><br>
         </div>
         
         <div>
         <br><h3>PHQ Questions</h3>
         <label>Score:</label>
-        <select>
+        <select id="phq">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -157,7 +159,7 @@
         <div>
         <br><h3>Epworth Score</h3>
         <label>Score:</label>
-        <select>
+        <select id="epworth">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -188,10 +190,10 @@
         
         <div>
         <br><h3>Misc Questions</h3>
-            <label>How many hours do you spend in bed in a 24 hour day?</label> <input type="text" name="inBed"><br>
-            <label>How many hours of sleep do you get in a 24 hour day?</label> <input type="text" name="sleepPerDay"><br>
+            <label>How many hours do you spend in bed in a 24 hour day?</label> <input type="text" id="inBed"><br>
+            <label>How many hours of sleep do you get in a 24 hour day?</label> <input type="text" id="sleepPerDay"><br>
         <label>Do you have chronic pain? If so rate on a scale from 1-10 (0 if no pain):</label>
-        <select>
+        <select id="chronicPain">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -205,15 +207,15 @@
             <option value="10">10</option>
         </select><br>
         <label>How many nights does pain disrupt sleep?</label><br>
-        <select>
-            <option value="0">never</option>
-            <option value="1">1-2 nights</option>
-            <option value="2">3-4 nights</option>
-            <option value="3">5-7 nights</option>
+        <select id="nightsDisrupted">
+            <option value="Zero">never</option>
+            <option value="One to two">1-2 nights</option>
+            <option value="Three to four">3-4 nights</option>
+            <option value="Five to seven">5-7 nights</option>
         </select><br>
-            <label>Restless legs</label><input type="checkbox" name="rls" value="0"> 
+            <label>Restless legs</label><input type="checkbox" id="rls"> 
         <label>RLS Criteria:</label>
-        <select>
+        <select id="rlsCriteria">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -224,6 +226,7 @@
         <br>
         <input type="submit" value="Submit" onclick="processReport()">
     </form>
+    <div id="result"></div>
 
 </body>
 </html>
